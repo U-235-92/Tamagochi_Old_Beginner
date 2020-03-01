@@ -19,10 +19,10 @@ import com.characters.Character;
 import com.main.Main;
 /***
  * 
- * @author Николай Коптев
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
  *
- * Панель, на которой отображаются кнопки управления
- * После нажатия Exit сохраняются текущие параметры персонажа
+ * РџР°РЅРµР»СЊ, РЅР° РєРѕС‚РѕСЂРѕР№ РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РєРЅРѕРїРєРё СѓРїСЂР°РІР»РµРЅРёСЏ
+ * РџРѕСЃР»Рµ РЅР°Р¶Р°С‚РёСЏ Exit СЃРѕС…СЂР°РЅСЏСЋС‚СЃСЏ С‚РµРєСѓС‰РёРµ РїР°СЂР°РјРµС‚СЂС‹ РїРµСЂСЃРѕРЅР°Р¶Р°
  */
 @SuppressWarnings("serial")
 public class OptionsPanel extends JPanel implements KeyListener{
@@ -145,22 +145,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeCheckStart() throws IOException {
 		String addresFile = "character/parameters/flag_start.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //инфа к записи
+			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(flag);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(flag);
 			out.close();
@@ -170,22 +170,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 		Main.setCode_exit(0);
 		String addresFile = "character/parameters/codeExit.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
 			int codeExit = Main.getCode_exit();
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(codeExit);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int codeExit = Main.getCode_exit(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int codeExit = Main.getCode_exit(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(codeExit);
 			out.close();
@@ -194,22 +194,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeHungryInfo() throws IOException {
 		String addresFile = "character/parameters/currentHungry.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int countHungry = Character.getCurrentHungry(); //инфа к записи
+			int countHungry = Character.getCurrentHungry(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(countHungry);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int countHungry = Character.getCurrentHungry(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int countHungry = Character.getCurrentHungry(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(countHungry);
 			out.close();
@@ -218,22 +218,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeToiletInfo() throws IOException {
 		String addresFile = "character/parameters/currentToilet.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int countToilet = Character.getCurrentToilet(); //инфа к записи
+			int countToilet = Character.getCurrentToilet(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(countToilet);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int countToilet = Character.getCurrentToilet(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int countToilet = Character.getCurrentToilet(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(countToilet);
 			out.close();
@@ -242,22 +242,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeFatigueInfo() throws IOException {
 		String addresFile = "character/parameters/currentFatigue.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int countFatigue = Character.getCurrentFatigue(); //инфа к записи
+			int countFatigue = Character.getCurrentFatigue(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(countFatigue);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int countFatigue = Character.getCurrentFatigue(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int countFatigue = Character.getCurrentFatigue(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(countFatigue);
 			out.close();
@@ -266,22 +266,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeXPosInfo() throws IOException {
 		String addresFile = "character/parameters/currentXPos.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int x_pos_character = GamePanel.getX_character(); //инфа к записи
+			int x_pos_character = GamePanel.getX_character(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(x_pos_character);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int x_pos_character = GamePanel.getX_character(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int x_pos_character = GamePanel.getX_character(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(x_pos_character);
 			out.close();
@@ -290,22 +290,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeYPosInfo() throws IOException {
 		String addresFile = "character/parameters/currentYPos.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int y_pos_character = GamePanel.getY_character(); //инфа к записи
+			int y_pos_character = GamePanel.getY_character(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(y_pos_character);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int y_pos_character = GamePanel.getY_character(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int y_pos_character = GamePanel.getY_character(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(y_pos_character);
 			out.close();
@@ -314,22 +314,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeTimeExit() throws IOException {
 		String addresFile = "character/parameters/timeExit.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			long timeExit = System.currentTimeMillis(); //инфа к записи
+			long timeExit = System.currentTimeMillis(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(timeExit);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			long timeExit = System.currentTimeMillis(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			long timeExit = System.currentTimeMillis(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(timeExit);
 			out.close();
@@ -338,9 +338,9 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeIdCharacter() throws IOException {
 		String addresFile = "character/parameters/idCharacter.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int idCharacter = Main.getIdCharacter(); //инфа к записи
+			int idCharacter = Main.getIdCharacter(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(idCharacter);
 			out.close();
@@ -349,22 +349,22 @@ public class OptionsPanel extends JPanel implements KeyListener{
 	private void writeAge() throws IOException {
 		String addresFile = "character/parameters/age.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int age = character.getAge(); //инфа к записи
+			int age = character.getAge(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(age);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int age = character.getAge(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int age = character.getAge(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(age);
 			out.close();
