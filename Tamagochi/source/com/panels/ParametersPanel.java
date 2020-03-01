@@ -25,8 +25,8 @@ import com.main.Counter;
 import com.main.Main;
 /***
  * 
- * @author Николай Коптев
- * Предназначена для отображения параметров персонажа
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
+ * РџСЂРµРґРЅР°Р·РЅР°С‡РµРЅР° РґР»СЏ РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РїР°СЂР°РјРµС‚СЂРѕРІ РїРµСЂСЃРѕРЅР°Р¶Р°
  */
 @SuppressWarnings("serial")
 public class ParametersPanel extends JPanel{
@@ -150,22 +150,22 @@ public class ParametersPanel extends JPanel{
 	private void writeCheckStart() throws IOException {
 		String addresFile = "character/parameters/flag_start.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //инфа к записи
+			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(flag);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int flag = Main.setStartFlag(Main.getStartFlag() + 1); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(flag);
 			out.close();
@@ -174,14 +174,14 @@ public class ParametersPanel extends JPanel{
 	private void writeTimeDeath() throws IOException {
 		String addresFile = "character/parameters/timeDeath.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //проверяем, если файл не существует, то создаем его{
+		if(file.exists() == false) { //РїСЂРѕРІРµСЂСЏРµРј, РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, С‚Рѕ СЃРѕР·РґР°РµРј РµРіРѕ{
 			file.createNewFile();
 			Main.setTime_death(System.currentTimeMillis());
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(Main.getTime_death());
 			out.close();
 		}
-		else { //иначе перезаписываем данные 
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ 
 			String readTimeDeath = "";
 			Scanner in = new Scanner(new File(addresFile));
 			while(in.hasNext()){
@@ -194,21 +194,21 @@ public class ParametersPanel extends JPanel{
 	private void writeCodeExit() throws IOException {
 		String addresFile = "character/parameters/codeExit.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
 			int codeExit = Main.getCode_exit();
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(codeExit);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
 			int codeExit = Main.getCode_exit();
 			out = new PrintWriter(addresFile);
 			out.print(codeExit);
@@ -218,21 +218,21 @@ public class ParametersPanel extends JPanel{
 	private void writeTimeRestart() throws IOException {
 		String addresFile = "character/parameters/timeRestart.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
 			int timeRestart = Main.getTimeRestart();
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(timeRestart);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
 			int timeRestart = Main.getTimeRestart();
 			out = new PrintWriter(addresFile);
 			out.print(timeRestart);
@@ -242,22 +242,22 @@ public class ParametersPanel extends JPanel{
 	private void writeIdCharacter() throws IOException {
 		String addresFile = "character/parameters/idCharacter.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //если файл не существует - создаем его
+		if(file.exists() == false) { //РµСЃР»Рё С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ - СЃРѕР·РґР°РµРј РµРіРѕ
 			file.createNewFile();
-			int idCharacter = Main.getIdCharacter(); //инфа к записи
+			int idCharacter = Main.getIdCharacter(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(idCharacter);
 			out.close();
 		}
-		else { //иначе перезаписываем данные в готовый файл
+		else { //РёРЅР°С‡Рµ РїРµСЂРµР·Р°РїРёСЃС‹РІР°РµРј РґР°РЅРЅС‹Рµ РІ РіРѕС‚РѕРІС‹Р№ С„Р°Р№Р»
 			file.createNewFile();
-			//очищаем файл от старой записи
-			String del = ""; //инфа к записи
+			//РѕС‡РёС‰Р°РµРј С„Р°Р№Р» РѕС‚ СЃС‚Р°СЂРѕР№ Р·Р°РїРёСЃРё
+			String del = ""; //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			PrintWriter out = new PrintWriter(addresFile);
 			out.print(del);
 			out.close();
-			//записываем новые данные
-			int idCharacter = Main.getIdCharacter(); //инфа к записи
+			//Р·Р°РїРёСЃС‹РІР°РµРј РЅРѕРІС‹Рµ РґР°РЅРЅС‹Рµ
+			int idCharacter = Main.getIdCharacter(); //РёРЅС„Р° Рє Р·Р°РїРёСЃРё
 			out = new PrintWriter(addresFile);
 			out.print(idCharacter);
 			out.close();
