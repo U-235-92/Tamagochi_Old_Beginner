@@ -17,7 +17,7 @@ import com.panels.OptionsPanel;
 import com.panels.ParametersPanel;
 /***
  * 
- * @author Николай Коптев
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
  *
  */
 public class Level {
