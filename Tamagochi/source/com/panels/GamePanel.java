@@ -19,8 +19,8 @@ import com.characters.Character;
 import com.main.Main;
 /***
  * 
- * @author Íèêîëàé Êîïòåâ
- * Íà äàííîé ïàíåëè ðàçìåùàåòñÿ èãðîâîé ôîí è ïåðñîíàæ 
+ * @author ÐÐ¸ÐºÐ¾Ð»Ð°Ð¹ ÐšÐ¾Ð¿Ñ‚ÐµÐ²
+ * ÐÐ° Ð´Ð°Ð½Ð½Ð¾Ð¹ Ð¿Ð°Ð½ÐµÐ»Ð¸ Ñ€Ð°Ð·Ð¼ÐµÑ‰Ð°ÐµÑ‚ÑÑ Ð¸Ð³Ñ€Ð¾Ð²Ð¾Ð¹ Ñ„Ð¾Ð½ Ð¸ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ 
  */
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel{
@@ -47,10 +47,10 @@ public class GamePanel extends JPanel{
 	public GamePanel() throws FileNotFoundException {
 		super();
 		setPreferredSize(new Dimension(WIDTH, HEIGHT));
-		//ïåðåïèñûâàíèå âðåìåíè ñìåðòè, åñëè ïåðñîíàæ óìåð â èãðå
+		//Ð¿ÐµÑ€ÐµÐ¿Ð¸ÑÑ‹Ð²Ð°Ð½Ð¸Ðµ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ ÑÐ¼ÐµÑ€Ñ‚Ð¸, ÐµÑÐ»Ð¸ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ ÑƒÐ¼ÐµÑ€ Ð² Ð¸Ð³Ñ€Ðµ
 		String addresFile = "character/parameters/timeDeath.txt";
 		file = new File(addresFile);
-		//ïðîâåðêà ñìåðòè ïåðñîíàæà ïî çíà÷åíèþ Main.codeExit
+		//Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° ÑÐ¼ÐµÑ€Ñ‚Ð¸ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð° Ð¿Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑŽ Main.codeExit
 		addresFile = "character/parameters/codeExit.txt";
 		file = new File(addresFile);
 		if(file.exists()) { 
@@ -63,15 +63,15 @@ public class GamePanel extends JPanel{
 			Main.setCode_exit(Integer.parseInt(readCodeExit));
 			character.setCurrentHungry(0);
 		}
-		//ðàçìåùåíèå ïåðñîíàæà
+		//Ñ€Ð°Ð·Ð¼ÐµÑ‰ÐµÐ½Ð¸Ðµ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°
 		if(character == null) {
-			//ðàçìåùåíèå ïåðñîíàæà íà ïîëå
+			//Ñ€Ð°Ð·Ð¼ÐµÑ‰ÐµÐ½Ð¸Ðµ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð° Ð½Ð° Ð¿Ð¾Ð»Ðµ
 			addresFile = "character/parameters/currentXPos.txt";
 			file = new File(addresFile);
-			if(file.exists() == false) { //åñëè ôàéë íå íàéäåí - èãðà òîëüêî çàïóùåíà. ñîçäàòü ïåðñîíàæà
+			if(file.exists() == false) { //ÐµÑÐ»Ð¸ Ñ„Ð°Ð¹Ð» Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½ - Ð¸Ð³Ñ€Ð° Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð·Ð°Ð¿ÑƒÑ‰ÐµÐ½Ð°. ÑÐ¾Ð·Ð´Ð°Ñ‚ÑŒ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°
 				character = new Character(Main.WIDTH + 30, 320, Character.WIDTH, Character.HEIGHT); 
 			}
-			else { //èíà÷å ÷èòàåì çàïèñàííûå äàííûå ïåðñîíàæà
+			else { //Ð¸Ð½Ð°Ñ‡Ðµ Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶Ð°
 				String read_X_Pos = "";
 				Scanner in = new Scanner(new File(addresFile));
 				while(in.hasNext()){
@@ -135,7 +135,7 @@ public class GamePanel extends JPanel{
 		int id = 0;
 		String addresFile = "character/parameters/idCharacter.txt";
 		file = new File(addresFile);
-		if(file.exists()) { // åñëè ôàéë åñòü, ÷èòàåì äàííûå
+		if(file.exists()) { // ÐµÑÐ»Ð¸ Ñ„Ð°Ð¹Ð» ÐµÑÑ‚ÑŒ, Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼ Ð´Ð°Ð½Ð½Ñ‹Ðµ
 			String idCharacter = "";
 			Scanner in = new Scanner(new File(addresFile));
 			while(in.hasNext()){
@@ -151,7 +151,7 @@ public class GamePanel extends JPanel{
 		return id;
 	}
 	private void loadCurrentHungry() throws FileNotFoundException {
-		//çàãðóçêà òåêóùåãî çíà÷åíèÿ ãîëîäà
+		//Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Ñ‚ÐµÐºÑƒÑ‰ÐµÐ³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð³Ð¾Ð»Ð¾Ð´Ð°
 		String readCurrentHungry = "";
 		String addresFile = "character/parameters/currentHungry.txt";
 		Scanner in = new Scanner(new File(addresFile));
@@ -164,7 +164,7 @@ public class GamePanel extends JPanel{
 	private void writeTimeDeath() throws FileNotFoundException {
 		String addresFile = "character/parameters/timeDeath.txt";
 		File file = new File(addresFile);
-		if(file.exists() == false) { //åñëè ôàéë íå ñóùåñòâóåò - ñîçäàåì åãî
+		if(file.exists() == false) { //ÐµÑÐ»Ð¸ Ñ„Ð°Ð¹Ð» Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚ - ÑÐ¾Ð·Ð´Ð°ÐµÐ¼ ÐµÐ³Ð¾
 			try {
 				file.createNewFile();
 			} catch (IOException e) {
@@ -176,7 +176,7 @@ public class GamePanel extends JPanel{
 			out.print(Main.getTime_death());
 			out.close();
 		}
-		else { //èíà÷å ïåðåçàïèñûâàåì äàííûå â ãîòîâûé ôàéë
+		else { //Ð¸Ð½Ð°Ñ‡Ðµ Ð¿ÐµÑ€ÐµÐ·Ð°Ð¿Ð¸ÑÑ‹Ð²Ð°ÐµÐ¼ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð² Ð³Ð¾Ñ‚Ð¾Ð²Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»
 			String readTimeDeath = "";
 			Scanner in = new Scanner(new File(addresFile));
 			while(in.hasNext()){
@@ -196,10 +196,10 @@ public class GamePanel extends JPanel{
 		in.close();
 		long parseTimeExit = Long.parseLong(timeExit);
 		parseTimeExit = parseTimeExit / 1000;
-		long currentTime = System.currentTimeMillis() / 1000; //â ñåêóíäàõ
-		//çàãðóçêà òåêóùåãî çíà÷åíèÿ ãîëîäà
+		long currentTime = System.currentTimeMillis() / 1000; //Ð² ÑÐµÐºÑƒÐ½Ð´Ð°Ñ…
+		//Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Ñ‚ÐµÐºÑƒÑ‰ÐµÐ³Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ Ð³Ð¾Ð»Ð¾Ð´Ð°
 		loadCurrentHungry();
-		// âðåìÿ "ïðîñòîÿ èãðû" ïðåâûñèëî ïàðàìåòð ãîëîäà - ïåðñîíàæ óìèðàåò, çàïèñü âðåìåíè ñìåðòè
+		// Ð²Ñ€ÐµÐ¼Ñ "Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ñ Ð¸Ð³Ñ€Ñ‹" Ð¿Ñ€ÐµÐ²Ñ‹ÑÐ¸Ð»Ð¾ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ Ð³Ð¾Ð»Ð¾Ð´Ð° - Ð¿ÐµÑ€ÑÐ¾Ð½Ð°Ð¶ ÑƒÐ¼Ð¸Ñ€Ð°ÐµÑ‚, Ð·Ð°Ð¿Ð¸ÑÑŒ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ ÑÐ¼ÐµÑ€Ñ‚Ð¸
 		if(currentTime - parseTimeExit > Character.getCurrentHungry()) { 
 			character.setCurrentHungry(0);
 			writeTimeDeath();
