@@ -29,9 +29,9 @@ import com.main.Counter;
 import com.main.Main;
 /***
  * 
- * @author Николай Коптев
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
  *
- * Отображается после гибели персонажа
+ * РћС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РїРѕСЃР»Рµ РіРёР±РµР»Рё РїРµСЂСЃРѕРЅР°Р¶Р°
  */
 @SuppressWarnings("serial")
 public class DeathPanel extends JPanel{
