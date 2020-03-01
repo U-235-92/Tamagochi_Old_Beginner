@@ -20,7 +20,7 @@ import com.levels.Level;
 import com.main.Main;
 /***
  * 
- * @author Николай Коптев
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
  *
  */
 
