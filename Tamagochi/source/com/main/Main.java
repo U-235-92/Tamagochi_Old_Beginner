@@ -10,19 +10,19 @@ import com.levels.Level;
 import com.panels.MenuPanel;
 /***
  * 
- * @author Николай Коптев
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
  *
  */
 public class Main {
 	public final static int WIDTH = 640;
 	public final static int HEIGHT = 480;
 	public static JFrame frame;
-	private static int code_exit = -1; // 1 - умер в игре; 0 - умер от простоя
+	private static int code_exit = -1; // 1 - СѓРјРµСЂ РІ РёРіСЂРµ; 0 - СѓРјРµСЂ РѕС‚ РїСЂРѕСЃС‚РѕСЏ
 	private static long time_death;
-	private static int timeRestart = 600; // в секундах, время перезагрузки игры, после гибели
-	private static int idCharacter; //дентифекатор персонажа
-	private static int startFlag = 0; //если 0 - новая игра, если 1 - запретить выбирать игрока, отличного от выбранного в первый раз, после выхода из игры и повторного старта
-	//если 0, то можно переключаться между персонажами, если 1 - переключаться нельзя
+	private static int timeRestart = 600; // РІ СЃРµРєСѓРЅРґР°С…, РІСЂРµРјСЏ РїРµСЂРµР·Р°РіСЂСѓР·РєРё РёРіСЂС‹, РїРѕСЃР»Рµ РіРёР±РµР»Рё
+	private static int idCharacter; //РґРµРЅС‚РёС„РµРєР°С‚РѕСЂ РїРµСЂСЃРѕРЅР°Р¶Р°
+	private static int startFlag = 0; //РµСЃР»Рё 0 - РЅРѕРІР°СЏ РёРіСЂР°, РµСЃР»Рё 1 - Р·Р°РїСЂРµС‚РёС‚СЊ РІС‹Р±РёСЂР°С‚СЊ РёРіСЂРѕРєР°, РѕС‚Р»РёС‡РЅРѕРіРѕ РѕС‚ РІС‹Р±СЂР°РЅРЅРѕРіРѕ РІ РїРµСЂРІС‹Р№ СЂР°Р·, РїРѕСЃР»Рµ РІС‹С…РѕРґР° РёР· РёРіСЂС‹ Рё РїРѕРІС‚РѕСЂРЅРѕРіРѕ СЃС‚Р°СЂС‚Р°
+	//РµСЃР»Рё 0, С‚Рѕ РјРѕР¶РЅРѕ РїРµСЂРµРєР»СЋС‡Р°С‚СЊСЃСЏ РјРµР¶РґСѓ РїРµСЂСЃРѕРЅР°Р¶Р°РјРё, РµСЃР»Рё 1 - РїРµСЂРµРєР»СЋС‡Р°С‚СЊСЃСЏ РЅРµР»СЊР·СЏ
 	
 	public static long timeStart;
 	
@@ -71,7 +71,7 @@ public class Main {
 		String addresFile = "character/parameters/flag_start.txt";
 		File file = new File(addresFile);
 		int flagStart = 0;
-		if(file.exists()) { // если файл есть, читаем данные
+		if(file.exists()) { // РµСЃР»Рё С„Р°Р№Р» РµСЃС‚СЊ, С‡РёС‚Р°РµРј РґР°РЅРЅС‹Рµ
 			String flag = "";
 			Scanner in = null;
 			try {
