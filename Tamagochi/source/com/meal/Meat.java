@@ -5,7 +5,7 @@ import java.util.Random;
 import com.characters.Character;
 /***
  * 
- * @author Николай Коптев
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
  *
  */
 public class Meat{
