@@ -14,7 +14,7 @@ import com.meal.Fish;
 import com.meal.Meat;
 /***
  * 
- * @author Николай Коптев
+ * @author РќРёРєРѕР»Р°Р№ РљРѕРїС‚РµРІ
  *
  */
 public class Character {
@@ -133,7 +133,7 @@ public class Character {
 		int id = 0;
 		String addresFile = "character/parameters/idCharacter.txt";
 		File file = new File(addresFile);
-		if(file.exists()) { // если файл есть, читаем данные
+		if(file.exists()) { // ГҐГ±Г«ГЁ ГґГ Г©Г« ГҐГ±ГІГј, Г·ГЁГІГ ГҐГ¬ Г¤Г Г­Г­Г»ГҐ
 			String idCharacter = "";
 			Scanner in = new Scanner(new File(addresFile));
 			while(in.hasNext()){
@@ -219,7 +219,7 @@ public class Character {
 		int age = 0;
 		String addresFile = "character/parameters/age.txt";
 		File file = new File(addresFile);
-		if(file.exists()) { // если файл есть, читаем данные
+		if(file.exists()) { // ГҐГ±Г«ГЁ ГґГ Г©Г« ГҐГ±ГІГј, Г·ГЁГІГ ГҐГ¬ Г¤Г Г­Г­Г»ГҐ
 			String ageCharacter = "";
 			Scanner in = new Scanner(new File(addresFile));
 			while(in.hasNext()){
